@@ -47,6 +47,59 @@ header nav a:hover {
   color: #e9c46a;
 }
 
+/* Menu de Hambúrguer */
+.hamburger {
+  display: none; /* Oculto por padrão (visível apenas em mobile) */
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Animação do ícone de hambúrguer quando ativo */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Menu de navegação */
+.nav-menu {
+  display: flex;
+  margin-top: 10px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #e9c46a;
+}
+
 /* Hero */
 #hero {
   background: rgb(2, 2, 49);
@@ -417,6 +470,37 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Mostra o botão em mobile */
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(2, 2, 49);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-menu a {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+
   .hero-content {
     flex-direction: column;
     gap: 20px;

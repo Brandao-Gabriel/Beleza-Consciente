@@ -12,7 +12,12 @@
   <header>
     <div class="container">
       <h1 class="logo">Beleza Consciente</h1>
-      <nav>
+      <button class="hamburger" aria-label="Abrir menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="nav-menu">
         <a href="#sobre">Sobre</a>
         <a href="#impactos">Impactos</a>
         <a href="#dicas">Dicas</a>
@@ -23,6 +28,7 @@
     </div>
   </header>
 
+  <!-- O resto do HTML permanece igual -->
   <section id="hero">
     <div class="container hero-content">
       <div class="hero-text">
@@ -146,6 +152,14 @@
           replyToHidden.value = emailInput.value;
         });
       }
+
+      // Script para o menu de hambúrguer
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active'); // Para animar o ícone, se desejar
+      });
     });
   </script>
 </body>
