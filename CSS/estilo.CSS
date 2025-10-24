@@ -476,33 +476,30 @@ footer {
 
   .nav-menu {
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    top: 20px; /* Alinha com o topo do hambúrguer */
+    right: 60px; /* Aparece à direita do ícone (ajuste se necessário) */
     background: rgb(2, 2, 49);
     flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
-    padding: 20px 0;
-    transform: translateY(-100%);
+    align-items: flex-start; /* Alinha à esquerda dentro do menu */
+    padding: 10px 15px;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Fade-in suave */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    z-index: 10; /* Garante que fique acima de outros elementos */
   }
 
   .nav-menu.active {
-    transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
 
   .nav-menu a {
-    margin: 15px 0; /* Aumentei o espaçamento vertical para melhor alinhamento */
-    font-size: 1.2rem;
-    text-align: center; /* Centraliza o texto dos links */
-    width: 100%; /* Garante que os links ocupem toda a largura para centralização */
-    display: block; /* Faz os links se comportarem como blocos para centralização */
+    margin: 10px 0; /* Espaçamento vertical entre links */
+    font-size: 1.1rem;
+    display: block; /* Faz os links se comportarem como blocos */
+    white-space: nowrap; /* Evita quebra de linha */
   }
 
   .hero-content {
