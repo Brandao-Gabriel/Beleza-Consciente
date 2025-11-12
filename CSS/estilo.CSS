@@ -99,7 +99,6 @@ header nav a:hover {
 .nav-menu a:hover {
   color: #e9c46a;
 }
-
 /* Hero */
 #hero {
   background: rgb(2, 2, 49);
@@ -241,7 +240,6 @@ header nav a:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 30px rgba(218, 165, 32, 0.6);
 }
-
 /* ====== ESPAÇAMENTOS CORRETOS DOS TÍTULOS ====== */
 
 /* "Onde Descartar" */
@@ -376,7 +374,6 @@ header nav a:hover {
 #descarte .text-image-container:last-of-type .side-image {
   margin-top: 40px; /* mantém o empurrão que alinhamos antes */
 }
-
 /* Formulário de contato */
 #contato {
   background: rgb(2, 2, 49);
@@ -594,3 +591,118 @@ footer {
     margin-top: 18px;
   }
 }
+/* Estilos para a seção Equipe */
+#equipe {
+  background: rgb(2, 2, 49);
+  padding: 40px 0;
+  border-bottom: 1px solid #444;
+}
+
+#equipe h3 {
+  font-size: 1.8rem;
+  color: goldenrod;
+  margin-bottom: 20px;
+}
+
+#equipe p {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 40px;
+  max-width: 800px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.equipe-container {
+  display: flex;
+  flex-wrap: nowrap; /* Força todos na mesma linha em desktop */
+  gap: 30px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.membro {
+  flex: 1 1 250px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
+}
+
+.membro-foto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 15px;
+  border: 3px solid goldenrod;
+  transition: transform 0.3s ease;
+}
+
+
+.pedro {
+/* Foto do Pedro Felipe ajustada */
+.pedro {
+  object-fit: cover !important;        /* Preenche o círculo, igual às outras */
+  object-position: top !important;     /* Mostra mais o topo (não corta a cabeça) */
+  background-color: rgb(8, 8, 92);     /* Mesmo fundo azulado do site */
+}
+
+}
+
+.membro-foto:hover {
+  transform: scale(1.05);
+}
+
+.membro h4 {
+  font-size: 1.2rem;
+  color: goldenrod;
+  margin-bottom: 10px;
+}
+
+.membro p {
+  font-size: 0.9rem;
+  color: white;
+  line-height: 1.5;
+}
+
+/* Responsividade para a seção Equipe */
+@media (max-width: 768px) {
+  .equipe-container {
+    flex-wrap: wrap; /* Em mobile, permite quebra de linha */
+    gap: 20px;
+  }
+
+  .membro {
+    flex: 1 1 200px; /* Ajusta tamanho em mobile */
+  }
+
+  .membro-foto {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .equipe-container {
+    flex-direction: column; /* Em telas muito pequenas, empilha verticalmente */
+    align-items: center;
+  }
+
+  .membro {
+    flex: none;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
